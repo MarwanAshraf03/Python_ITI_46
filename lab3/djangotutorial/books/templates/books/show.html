@@ -1,0 +1,9 @@
+<a href="{% url 'books_index' %}">All Books</a>
+<p>The Book:</p>
+<div>
+  <p>title: {{book.title}}</p>
+  <p>description: {{book.description}}</p>
+  <p>price: {{book.price}}</p>
+</div>
+<a href="{% url 'delete' book.id %}">Delete the Book</a>
+<a href="{% url 'edit' book.id %}">Edit the Book</a>
