@@ -1,0 +1,14 @@
+<form action="{% url 'create' %}" method="POST">
+  {% csrf_token %} {% for field in form %}
+  <div style="margin-bottom: 15px">
+    {{ field.label_tag }} <br />
+    {{ field }} {% if field.errors %}
+    <span style="color: red">{{ field.errors.0 }}</span>
+    {% endif %}
+  </div>
+  {% endfor %}
+
+  <button type="submit">Save Book</button>
+</form>
+
+<!-- hello world -->
