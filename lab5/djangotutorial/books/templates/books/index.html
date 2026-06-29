@@ -1,0 +1,17 @@
+{{request.user.is_authenticated}}
+{{request.user}}
+<a href="{% url 'new' %}">
+  <p>Create a Book</p>
+</a>
+
+{% if books %} {% for book in books %}
+<div>
+  <a href="{% url 'show' book.id %}">
+    <p>title: {{book.title}}</p>
+  </a>
+  <p>description: {{book.desc}}</p>
+  <p>rate: {{book.rate}}</p>
+</div>
+{% endfor %} {% else %}
+<p>No Books available</p>
+{% endif %}

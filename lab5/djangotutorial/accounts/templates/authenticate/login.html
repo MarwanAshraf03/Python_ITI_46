@@ -1,0 +1,19 @@
+<html>
+  <body>
+    hello there, this is the login page
+    <form action="{% url 'login_user' %}" method="POST">
+      {% csrf_token %}
+      <label for="username">User Name</label>
+      <input type="text" name="username" value="">
+
+      <label for="password">Password</label>
+      <input type="password" name="password" value="">
+
+      <button type="submit">Login</button>
+    </form>
+    <form action="{% url 'logout' %}" method="POST">
+      {% csrf_token %}
+      <button type="submit">Logout</button>
+    </form>
+  </body>
+</html>
